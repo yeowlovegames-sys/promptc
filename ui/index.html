@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en" data-theme="obsidian">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>promptc — prompt compiler</title>
+  <meta name="description" content="Compile rough prompts into detailed, model-specific prompts.">
+  <meta name="author" content="lyn_lyaaaaaaaaa">
+  <link rel="stylesheet" href="css/chassis.css">
+  <link rel="stylesheet" href="css/skins.css">
+  <script src="js/vault.js"></script>
+  <script src="js/delta.js" defer></script>
+  <script src="js/sandbox.js" defer></script>
+  <script src="js/glow.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <!-- authorship seal: filled and verified (sha-256) by app.js from /api/meta -->
+  <div class="seal-bar" id="seal-bar" data-state="pending">
+    <span class="seal-dot" id="seal-dot"></span>
+    <span id="seal-text">© promptc — authorship seal loading…</span>
+    <span class="spacer"></span>
+    <span id="seal-state"></span>
+  </div>
+
+  <header class="topbar">
+    <div class="logo"><span class="logo-mark">⌘</span><span>promptc</span><span class="badge" id="ver">v1.0.0</span></div>
+    <span class="spacer"></span>
+    <nav class="nav">
+      <button class="btn small ghost" id="btn-changes" data-shine>What's changed</button>
+      <button class="btn small icon ghost" id="btn-signals" data-shine title="Model updates" aria-label="Model updates">⟳<span class="dot-new" id="signal-dot" hidden></span></button>
+      <button class="btn small" id="btn-style" data-shine>Appearance</button>
+    </nav>
+  </header>
+
+  <main class="shell">
+    <section class="composer card" data-shine>
+      <div class="field">
+        <label class="label" for="input"><span>Rough prompt</span><span id="count">0 / 20000</span></label>
+        <textarea id="input" placeholder="e.g. write a python script that renames my photos by date" maxlength="20000" spellcheck="true"></textarea>
+      </div>
+      <div class="field">
+        <label class="label" for="model"><span>Target model</span></label>
+        <select id="model" aria-label="Target model"></select>
+      </div>
+      <div class="field">
+        <span class="label" id="effort-label">Effort</span>
+        <div class="seg" id="effort" role="radiogroup" aria-labelledby="effort-label"></div>
+        <p class="hint" id="effort-hint"></p>
+      </div>
+      <button class="btn primary" id="go" data-shine disabled>Compile prompt <span aria-hidden="true">→</span></button>
+      <p class="hint">Ctrl/⌘ + Enter to compile. You can queue several prompts; finished ones appear instantly.</p>
+    </section>
+
+    <section class="runs" aria-live="polite">
+      <div class="runs-head"><h2>Compiled prompts</h2><button class="btn small ghost" id="clear" hidden>Clear history</button></div>
+      <div id="runs"></div>
+    </section>
+  </main>
+
+  <footer class="foot" id="foot"></footer>
+
+  <!-- appearance drawer -->
+  <aside class="drawer" id="drawer" hidden aria-label="Appearance">
+    <div class="drawer-head"><h2>Appearance</h2><button class="btn small ghost" data-close="drawer" aria-label="Close">✕</button></div>
+    <div class="drawer-body">
+      <div class="tabs" role="tablist" id="drawer-tabs">
+        <button class="tab" role="tab" data-tab="themes" aria-selected="true">Themes</button>
+        <button class="tab" role="tab" data-tab="css" aria-selected="false">CSS editor</button>
+        <button class="tab" role="tab" data-tab="ai" aria-selected="false">AI theme</button>
+      </div>
+
+      <div data-panel="themes"><div class="themes" id="themes"></div></div>
+
+      <div data-panel="css" hidden>
+        <div class="field">
+          <label class="label" for="css-editor"><span>Live CSS (sandboxed)</span><span id="css-size">0 B</span></label>
+          <textarea id="css-editor" class="code" spellcheck="false" placeholder="/* try: .card { border-radius: 28px; } */"></textarea>
+          <p class="report" id="css-report"></p>
+        </div>
+        <div class="chips" id="snippets"></div>
+        <div class="row" style="margin-top:10px">
+          <button class="btn small" id="css-export">Export .css</button>
+          <button class="btn small" id="css-import">Import .css</button>
+          <button class="btn small ghost" id="css-reset">Reset</button>
+          <input type="file" id="css-file" accept=".css,text/css" hidden>
+        </div>
+        <p class="hint" style="margin-top:10px">Layout, modals and the authorship bar are locked; everything else (colors, borders, shadows, animations, hover shines) is yours. Resource URLs and @import are blocked.</p>
+      </div>
+
+      <div data-panel="ai" hidden>
+        <div class="field">
+          <label class="label" for="vibe">Describe a vibe</label>
+          <input type="text" id="vibe" maxlength="200" placeholder="e.g. calm forest at dawn, frosted glass">
+        </div>
+        <div class="chips" id="vibes" style="margin:10px 0"></div>
+        <button class="btn primary" id="vibe-go" data-shine>Generate theme</button>
+        <p class="report" id="vibe-report"></p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- what's changed -->
+  <div class="modal" id="modal-changes" hidden role="dialog" aria-modal="true" aria-label="What's changed">
+    <div class="sheet">
+      <div class="modal-head"><h2>What's changed</h2><button class="btn small ghost" data-close="modal-changes" aria-label="Close">✕</button></div>
+      <div class="sheet-body" id="changes-body"></div>
+    </div>
+  </div>
+
+  <!-- model updates -->
+  <div class="modal" id="modal-signals" hidden role="dialog" aria-modal="true" aria-label="Model updates">
+    <div class="sheet">
+      <div class="modal-head"><h2>Model updates</h2><button class="btn small ghost" data-close="modal-signals" aria-label="Close">✕</button></div>
+      <div class="sheet-body" id="signals-body"></div>
+    </div>
+  </div>
+
+  <div class="toasts" id="toasts" aria-live="polite"></div>
+  <div class="seal-alert" id="seal-alert" hidden role="alert"></div>
+</body>
+</html>

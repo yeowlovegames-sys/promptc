@@ -1,0 +1,68 @@
+/* ==========================================================================
+   skins.css — built-in themes. Every theme is just a set of CSS variables.
+   To add one: copy a block, change the data-theme name, add a tile in ui/js/app.js (THEMES).
+   The "custom" theme is filled at runtime by the AI generator / .css import (sandbox.js).
+   ========================================================================== */
+@layer skin {
+  :root {
+    --bg: hsl(230 20% 6%); --bg-2: hsl(230 18% 10%);
+    --mesh1: hsl(255 80% 40% / .30); --mesh2: hsl(200 90% 40% / .22); --mesh3: hsl(320 80% 40% / .16);
+    --surface: hsl(230 18% 13% / .72); --surface-2: hsl(230 18% 18% / .75); --border: hsl(230 40% 80% / .13);
+    --text: hsl(230 25% 95%); --muted: hsl(230 12% 66%);
+    --accent: hsl(255 95% 72%); --accent-2: hsl(190 95% 62%); --accent-ink: hsl(230 40% 8%);
+    --ok: hsl(150 70% 55%); --warn: hsl(38 95% 58%); --danger: hsl(0 85% 64%);
+    --radius: 16px; --blur: 0px;
+    --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    --shine: hsl(255 95% 72% / .20); --shadow: 0 10px 40px hsl(0 0% 0% / .45);
+  }
+
+  /* obsidian — sleek dark (default values above, repeated so tiles preview correctly) */
+  [data-theme="obsidian"] {
+    --bg: hsl(230 20% 6%); --bg-2: hsl(230 18% 10%);
+    --mesh1: hsl(255 80% 40% / .18); --mesh2: hsl(200 90% 40% / .10); --mesh3: transparent;
+    --surface: hsl(230 18% 13% / .78); --surface-2: hsl(230 18% 18% / .8);
+    --accent: hsl(255 95% 72%); --accent-2: hsl(190 95% 62%);
+  }
+
+  /* aurora — subtle mesh gradients */
+  [data-theme="aurora"] {
+    --bg: hsl(240 35% 6%); --bg-2: hsl(240 30% 10%);
+    --mesh1: hsl(165 90% 42% / .34); --mesh2: hsl(275 90% 55% / .32); --mesh3: hsl(210 95% 50% / .26);
+    --surface: hsl(240 30% 12% / .58); --surface-2: hsl(240 30% 18% / .66); --border: hsl(180 60% 85% / .14);
+    --accent: hsl(165 90% 60%); --accent-2: hsl(275 95% 72%); --accent-ink: hsl(240 40% 8%);
+    --shine: hsl(165 90% 60% / .20);
+  }
+
+  /* glass — glassmorphism */
+  [data-theme="glass"] {
+    --bg: hsl(215 45% 12%); --bg-2: hsl(215 40% 16%);
+    --mesh1: hsl(330 90% 60% / .50); --mesh2: hsl(200 95% 55% / .50); --mesh3: hsl(50 95% 60% / .30);
+    --surface: hsl(0 0% 100% / .09); --surface-2: hsl(0 0% 100% / .13); --border: hsl(0 0% 100% / .22);
+    --text: hsl(0 0% 98%); --muted: hsl(210 25% 82% / .8);
+    --accent: hsl(190 100% 75%); --accent-2: hsl(330 100% 78%); --accent-ink: hsl(215 50% 10%);
+    --blur: 22px; --radius: 22px; --shine: hsl(0 0% 100% / .22); --shadow: 0 14px 50px hsl(215 60% 5% / .5);
+  }
+
+  /* paper — light, quiet */
+  [data-theme="paper"] {
+    --bg: hsl(40 30% 97%); --bg-2: hsl(40 25% 93%);
+    --mesh1: hsl(25 90% 70% / .22); --mesh2: hsl(200 80% 75% / .18); --mesh3: transparent;
+    --surface: hsl(0 0% 100% / .85); --surface-2: hsl(40 25% 95%); --border: hsl(30 20% 25% / .14);
+    --text: hsl(30 25% 12%); --muted: hsl(30 10% 40%);
+    --accent: hsl(18 85% 48%); --accent-2: hsl(340 80% 52%); --accent-ink: #fff;
+    --ok: hsl(150 65% 32%); --warn: hsl(35 90% 40%); --danger: hsl(0 75% 46%);
+    --shine: hsl(18 85% 48% / .14); --shadow: 0 10px 30px hsl(30 30% 30% / .12); --radius: 14px;
+  }
+
+  /* terminal — cyber green on black */
+  [data-theme="terminal"] {
+    --bg: hsl(140 40% 3%); --bg-2: hsl(140 30% 6%);
+    --mesh1: hsl(140 100% 40% / .14); --mesh2: hsl(170 100% 40% / .08); --mesh3: transparent;
+    --surface: hsl(140 35% 7% / .85); --surface-2: hsl(140 35% 11% / .9); --border: hsl(140 100% 60% / .22);
+    --text: hsl(140 80% 88%); --muted: hsl(140 25% 56%);
+    --accent: hsl(140 100% 58%); --accent-2: hsl(175 100% 56%); --accent-ink: hsl(140 60% 5%);
+    --font: ui-monospace, "SF Mono", Menlo, Consolas, monospace; --radius: 4px;
+    --shine: hsl(140 100% 58% / .22); --shadow: 0 0 40px hsl(140 100% 40% / .12);
+  }
+}

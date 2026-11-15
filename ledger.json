@@ -1,0 +1,27 @@
+{
+  "releases": [
+    {
+      "version": "1.0.0",
+      "date": "2026-11-15",
+      "title": "First public release",
+      "added": [
+        "Prompt compiler with four effort levels: Low, Medium, High, Very High",
+        "Model-native formatting for Anthropic (XML), Google (Markdown), OpenAI (numbered steps) and open-weight families",
+        "Asynchronous queue: finished prompts show instantly while others keep compiling",
+        "Claude-style thinking indicator with independently moving dots",
+        "Five built-in themes, sandboxed live CSS editor, AI theme generator, .css export and import",
+        "Original vs optimized side-by-side view and word-level diff",
+        "Tamper-evident authorship seal and What's Changed history",
+        "14-day model updater that drafts new model profiles for your approval"
+      ],
+      "models": [
+        "Claude Sonnet 5.5, Opus 5.5, Haiku 5.5, Fable 5.2",
+        "Gemini 4 Argon, Gemini 3.8 Flash",
+        "GPT-6.1 Sol, GPT-6.1 Terra, GPT-6 Astra",
+        "Grok 4.7, DeepSeek V4, Llama 4 Maverick"
+      ],
+      "changed": [],
+      "fixed": []
+    }
+  ]
+}

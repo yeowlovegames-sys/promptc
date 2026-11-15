@@ -1,0 +1,1298 @@
+[
+  {
+    "id": "sig-8a3c835c49",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.910Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-2-5-flash",
+      "label": "Gemini 2.5 Flash",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-36a0af8bf4",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.910Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-2-5-pro",
+      "label": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-83755b4429",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-2-5-flash-lite",
+      "label": "Gemini 2.5 Flash-Lite",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-0115845411",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-flash-preview",
+      "label": "Gemini 3 Flash Preview",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-abd6172a6d",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-1-pro-preview",
+      "label": "Gemini 3.1 Pro Preview",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-d67597146d",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-1-pro-preview-customtools",
+      "label": "Gemini 3.1 Pro Preview Custom Tools",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-b59f693c9d",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-1-flash-lite-preview",
+      "label": "Gemini 3.1 Flash Lite Preview",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-f55500be0d",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-1-flash-lite",
+      "label": "Gemini 3.1 Flash Lite",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-fb2f4ff106",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-nano-banana-2-1",
+      "label": "Nano Banana 2.1",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ccd62e2a61",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.911Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-5-flash",
+      "label": "Gemini 3.5 Flash",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-7383173ad9",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-5-flash-lite",
+      "label": "Gemini 3.5 Flash Lite",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ee802dcfd3",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-omni-flash-preview",
+      "label": "Gemini Omni Flash Preview",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-6205734047",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-omni-1-1-flash",
+      "label": "Gemini Omni 1.1 Flash",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-422fe11b97",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-omni-1-2-flash",
+      "label": "Gemini Omni 1.2 Flash",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-eb33240f8c",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-5-transcribe",
+      "label": "Gemini 3.5 Transcribe",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-546956891f",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-6-flash",
+      "label": "Gemini 3.6 Flash",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-3af5d4644d",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-3-7-flash",
+      "label": "Gemini 3.7 Flash",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-b541436d97",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-4-carbon",
+      "label": "Gemini 4 Carbon",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-c67e9d5e10",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-4-hydrogen",
+      "label": "Gemini 4 Hydrogen",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-b19c7f47a7",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-robotics-er-2-preview",
+      "label": "Gemini Robotics-ER 2 Preview",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-23409c8e6f",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-robotics-er-2-streaming-preview",
+      "label": "Gemini Robotics-ER 2 Streaming Preview",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-908bb17b39",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:36.912Z",
+    "confidence": "high",
+    "source": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+    "profile": {
+      "id": "gemini-decision-1",
+      "label": "Gemini Decision 1",
+      "provider": "Google",
+      "family": "google",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Prompt design strategies - Gemini API | Google AI Studio",
+        "# Prompt design strategies {% id=\"general-prompt\" %}",
+        "*Prompt design* is the process of creating prompts, or natural language",
+        "started designing prompts to get the most out of Gemini AI models.",
+        "Note: Prompt engineering is iterative. These guidelines and templates are",
+        "## Topic-specific prompt guides {% id=\"additional-prompt-guides\" %}"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-79dde61404",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.090Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-mini",
+      "label": "GPT 5 Mini",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-257dea353d",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.090Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-nano",
+      "label": "GPT 5 Nano",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-7b61baa575",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.090Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-4-mini",
+      "label": "GPT 5.4 Mini",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-219bc82761",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.090Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-6-luna",
+      "label": "GPT 5.6 Luna",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ae8667a1ad",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.090Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-2-pro",
+      "label": "GPT 5.2 Pro",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-1ee2b4fe12",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-6-sol",
+      "label": "GPT 5.6 Sol",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-4d71dc6e2a",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-5-pro",
+      "label": "GPT 5.5 Pro",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-e87e630e9b",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-1",
+      "label": "GPT 5.1",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ecf250fbc3",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-pro",
+      "label": "GPT 5 Pro",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-80cfb9a930",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-4-pro",
+      "label": "GPT 5.4 Pro",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-1745896335",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-4",
+      "label": "GPT 5.4",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-eb89e42a7c",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-4-nano",
+      "label": "GPT 5.4 Nano",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-2a3bf2f310",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-4-1",
+      "label": "GPT 4.1",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-f5034753ba",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-5",
+      "label": "GPT 5.5",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ac9a665ad2",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-4-1-mini",
+      "label": "GPT 4.1 Mini",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-f5b4a6aa4a",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-4o-mini",
+      "label": "GPT 4o Mini",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-66f73827de",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-6-terra",
+      "label": "GPT 5.6 Terra",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ed33039926",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.091Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5",
+      "label": "GPT 5",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-b9ec3bad61",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.092Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-3-codex",
+      "label": "GPT 5.3 Codex",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-a4a2a774de",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.092Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-6-sol",
+      "label": "GPT 6 Sol",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-6d9372f6ba",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.092Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-4o",
+      "label": "GPT 4o",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-4f14236648",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.092Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-6-luna",
+      "label": "GPT 6 Luna",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-a2bc868fe3",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.092Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-5-2",
+      "label": "GPT 5.2",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-0ff99609b5",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:39.092Z",
+    "confidence": "high",
+    "source": "https://api.openai.com/v1/models",
+    "profile": {
+      "id": "gpt-live-1",
+      "label": "GPT Live 1",
+      "provider": "OpenAI",
+      "family": "openai",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "For the complete documentation index, see llms.txt . Markdown versions of documentation pages are available by appending",
+        "Suggested responses create reasoning_effort realtime prompt caching Primary navigation",
+        "Suggested responses create reasoning_effort realtime prompt caching Overview Models Agents Tools Audio & voice Production API reference Docs Models",
+        "Enhance results with prompt engineering strategies. Responses",
+        "Here’s an example using the Responses API . Generate text from a simple prompt TypeScript",
+        ".forEach(outputText -> System.out.println(outputText.text()));"
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-b8038614e3",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:44.103Z",
+    "confidence": "low",
+    "source": "https://www.llama.com/docs/model-cards-and-prompt-formats/",
+    "profile": {
+      "id": "llama-3-1-enhancements",
+      "label": "Llama 3.1 Enhancements",
+      "provider": "Other",
+      "family": "open",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Creating effective prompts is an important part of prompt engineering. Here are some tips for creating prompts that will help improve the performance of your language model:",
+        "Be clear and concise: Your prompt should be easy to understand and provide enough information for the model to generate relevant output. Avoid using jargon or technical terms that may confuse the model.",
+        "Vary the prompts: Using different prompts can help the model improve at its task and produce more diverse and creative output. Try using different styles, tones, and formats to see how the model responds.",
+        "Gather feedback: Finally, use feedback from users or other sources to continually improve your prompts. This can help you identify areas where the model needs more guidance and make adjustments accordingly.",
+        "Detailed, explicit instructions produce better results than open-ended prompts. Giving explicit instructions is like placing rules and restrictions on how the model responds to your prompt.",
+        "Give your answer like an old-timey private investigator hunting down a case step-by-step."
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  },
+  {
+    "id": "sig-ff4fb1f04b",
+    "kind": "new-model",
+    "status": "new",
+    "found": "2026-11-15T13:02:44.104Z",
+    "confidence": "low",
+    "source": "https://www.llama.com/docs/model-cards-and-prompt-formats/",
+    "profile": {
+      "id": "llama-3-to",
+      "label": "Llama 3 To",
+      "provider": "Other",
+      "family": "open",
+      "tweaks": {
+        "thinking": "prompted"
+      },
+      "notes": [
+        "Creating effective prompts is an important part of prompt engineering. Here are some tips for creating prompts that will help improve the performance of your language model:",
+        "Be clear and concise: Your prompt should be easy to understand and provide enough information for the model to generate relevant output. Avoid using jargon or technical terms that may confuse the model.",
+        "Vary the prompts: Using different prompts can help the model improve at its task and produce more diverse and creative output. Try using different styles, tones, and formats to see how the model responds.",
+        "Gather feedback: Finally, use feedback from users or other sources to continually improve your prompts. This can help you identify areas where the model needs more guidance and make adjustments accordingly.",
+        "Detailed, explicit instructions produce better results than open-ended prompts. Giving explicit instructions is like placing rules and restrictions on how the model responds to your prompt.",
+        "Give your answer like an old-timey private investigator hunting down a case step-by-step."
+      ],
+      "added": "2026-11-15",
+      "source": "sentinel"
+    }
+  }
+]

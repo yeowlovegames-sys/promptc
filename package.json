@@ -1,0 +1,17 @@
+{
+  "name": "promptc",
+  "version": "1.0.0",
+  "description": "Prompt compiler: turns rough prompts into detailed, model-specific prompts. Zero dependencies.",
+  "main": "kernel.js",
+  "scripts": {
+    "start": "node kernel.js",
+    "test": "node tools/selftest.js",
+    "sentinel": "node daemon/sentinel.js --once --force",
+    "sentinel:daemon": "node daemon/sentinel.js --daemon",
+    "seal": "node tools/seal.js"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "private": false,
+  "keywords": ["prompt-engineering", "prompt-compiler", "llm", "claude", "gemini", "gpt"]
+}

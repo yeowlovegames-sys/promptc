@@ -1,0 +1,57 @@
+{
+  "_comment": "kind 'api' lists models from an official endpoint (needs the env key, accurate). kind 'page' scrapes a public changelog page with a regex (no key, low confidence, always needs your approval). docs[] are prompting-guide pages mined for formatting tips.",
+  "sources": [
+    {
+      "provider": "Anthropic", "family": "anthropic", "kind": "api",
+      "url": "https://api.anthropic.com/v1/models?limit=100",
+      "auth": { "env": "ANTHROPIC_API_KEY", "header": "x-api-key", "scheme": "", "extra": { "anthropic-version": "2023-06-01" } },
+      "idPath": "data", "idField": "id", "labelField": "display_name",
+      "pattern": "^claude-", "exclude": "-\\d{8}$|-latest$",
+      "docs": ["https://docs.claude.com/en/docs/build-with-claude/prompt-engineering/overview"]
+    },
+    {
+      "provider": "Google", "family": "google", "kind": "api",
+      "url": "https://generativelanguage.googleapis.com/v1beta/models?pageSize=200",
+      "auth": { "env": "GOOGLE_API_KEY", "query": "key" },
+      "idPath": "models", "idField": "name", "labelField": "displayName", "stripPrefix": "models/",
+      "pattern": "^gemini-", "exclude": "embedding|image|tts|live|audio|vision|aqa|-\\d{3}$|-latest$|preview-\\d",
+      "docs": ["https://ai.google.dev/gemini-api/docs/prompting-strategies"]
+    },
+    {
+      "provider": "OpenAI", "family": "openai", "kind": "api",
+      "url": "https://api.openai.com/v1/models",
+      "auth": { "env": "OPENAI_API_KEY", "header": "authorization", "scheme": "Bearer " },
+      "idPath": "data", "idField": "id",
+      "pattern": "^gpt-", "exclude": "embedding|image|tts|audio|realtime|transcribe|search|moderation|instruct|-\\d{4}-\\d{2}-\\d{2}$|-latest$",
+      "docs": ["https://platform.openai.com/docs/guides/prompt-engineering"]
+    },
+    {
+      "provider": "Other", "family": "open", "kind": "api",
+      "url": "https://api.x.ai/v1/models",
+      "auth": { "env": "XAI_API_KEY", "header": "authorization", "scheme": "Bearer " },
+      "idPath": "data", "idField": "id",
+      "pattern": "^grok-", "exclude": "image|vision|-\\d{4}-\\d{2}-\\d{2}$|-latest$",
+      "docs": ["https://docs.x.ai/docs/guides"]
+    },
+    {
+      "provider": "Other", "family": "open", "kind": "api",
+      "url": "https://api.deepseek.com/models",
+      "auth": { "env": "DEEPSEEK_API_KEY", "header": "authorization", "scheme": "Bearer " },
+      "idPath": "data", "idField": "id",
+      "pattern": "^deepseek-", "exclude": "",
+      "docs": ["https://api-docs.deepseek.com/guides/reasoning_model"]
+    },
+    {
+      "provider": "Anthropic", "family": "anthropic", "kind": "page",
+      "url": "https://docs.claude.com/en/docs/about-claude/models/overview",
+      "pattern": "claude-(?:opus|sonnet|haiku|fable|mythos)-\\d+(?:-\\d+)?", "exclude": "-\\d{8}$",
+      "docs": []
+    },
+    {
+      "provider": "Other", "family": "open", "kind": "page",
+      "url": "https://www.llama.com/docs/model-cards-and-prompt-formats/",
+      "pattern": "llama-\\d(?:\\.\\d)?-[a-z]+", "exclude": "guard|prompt",
+      "docs": ["https://www.llama.com/docs/how-to-guides/prompting/"]
+    }
+  ]
+}
