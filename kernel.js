@@ -34,6 +34,7 @@ const dock = require('./core/dock');
 const forge = require('./core/forge');
 const prism = require('./core/prism');
 const uplink = require('./core/uplink');
+const mind = require('./core/mind');
 const { Relay } = require('./core/relay');
 const pkg = require('./package.json');
 
@@ -43,6 +44,8 @@ const PACE = process.env.PC_STAGE_PACE_MS === undefined ? 280 : Number(process.e
 const UI_DIR = path.join(__dirname, 'ui');
 const MAX_BODY = 256 * 1024;
 const INTERVAL_DAYS = 14;
+const MAX_OPEN_PER_IP = 8;
+const MAX_WAITING = 300;
 
 const file = {
   grid: dock.p('registry', 'grid.json'),
@@ -61,24 +64,23 @@ const relay = new Relay({
     const model = grid.models.find((m) => m.id === job.modelId);
     if (!model) throw new Error('Unknown model: ' + job.modelId);
 
-    if (uplink.enabled()) {
+    // 1) AI engine: the visitor's own key, or the server owner's key. Multi-pass pipeline (core/mind.js).
+    const engine = job.engine || null;
+    let warning = '';
+    if (uplink.enabled(engine)) {
       try {
-        onStage('Analyzing intent', 0, 3);
-        onStage(`Optimizing for ${model.label}`, 1, 3);
-        const text = await uplink.chat({ system: forge.metaPrompt(model, job.effort), user: job.prompt });
-        onStage('Verifying structure', 2, 3);
-        const compiled = text.replace(/^```[a-z]*\n?|```\s*$/gi, '').trim() + '\n';
-        const words = (s) => (s.trim() ? s.trim().split(/\s+/).length : 0);
-        return {
-          compiled,
-          engine: 'upstream',
-          info: { type: 'upstream', typeLabel: 'upstream model', effort: job.effort, words: { from: words(job.prompt), to: words(compiled) }, tokens: { from: Math.ceil(job.prompt.length / 4), to: Math.ceil(compiled.length / 4) } }
-        };
+        const out = await mind.run({ prompt: job.prompt, model, effort: job.effort, engine, onStage });
+        return { ...out, engine: 'upstream' };
       } catch (err) {
-        console.warn('[kernel] upstream failed, falling back to local engine:', err.message);
+        // never silent: the card shows this message next to the result
+        warning = `The AI engine failed (${err.message}). The built-in engine was used instead.`;
+        console.warn('[kernel] ai engine failed:', err.message);
       }
     }
+
+    // 2) built-in rule-based engine (always available)
     const out = await forge.compile({ prompt: job.prompt, model, effort: job.effort, onStage, pace: PACE });
+    out.info.warnings = warning ? [warning] : [];
     return { ...out, engine: 'local' };
   }
 });
@@ -125,6 +127,18 @@ function readBody(req) {
     });
     req.on('error', reject);
   });
+}
+
+/* the visitor's ip. Behind a reverse proxy (Render sets RENDER=true) every request arrives from the proxy,
+   so the real client is the LAST entry of x-forwarded-for (the one the proxy itself appended).
+   Override with PC_TRUST_PROXY=1 (always) or 0 (never). */
+function clientIp(req) {
+  const trust = process.env.PC_TRUST_PROXY === undefined ? Boolean(process.env.RENDER) : process.env.PC_TRUST_PROXY === '1';
+  if (trust) {
+    const xff = String(req.headers['x-forwarded-for'] || '').split(',').map((x) => x.trim()).filter(Boolean);
+    if (xff.length) return xff[xff.length - 1];
+  }
+  return req.socket.remoteAddress || 'x';
 }
 
 /* naive per-ip rate limit: 120 api calls / minute */
@@ -184,7 +198,7 @@ async function api(req, res, url) {
 
   if (method === 'GET' && route === '/meta') {
     const meta = dock.readJson(file.meta, {});
-    return send(res, 200, { ...meta, version: pkg.version, upstream: uplink.enabled() });
+    return send(res, 200, { ...meta, version: pkg.version, upstream: uplink.enabled(), byok: true });
   }
 
   if (method === 'GET' && route === '/models') {
@@ -202,7 +216,14 @@ async function api(req, res, url) {
     if (!forge.LEVELS[body.effort]) return send(res, 400, { error: 'Unknown effort level.' });
     const grid = dock.readJson(file.grid, { models: [] });
     if (!grid.models.some((m) => m.id === body.modelId)) return send(res, 400, { error: 'Unknown model.' });
-    return send(res, 202, relay.enqueue({ prompt, modelId: body.modelId, effort: body.effort }));
+    const owner = clientIp(req);
+    if (relay.openCount(owner) >= MAX_OPEN_PER_IP) return send(res, 429, { error: `You already have ${MAX_OPEN_PER_IP} prompts in progress. Wait for some to finish.` });
+    if (relay.waiting.length >= MAX_WAITING) return send(res, 503, { error: 'The queue is full. Try again in a minute.' });
+    let engine = null;
+    if (body.engine) {
+      try { engine = uplink.validate(body.engine); } catch (err) { return send(res, 400, { error: err.message }); }
+    }
+    return send(res, 202, relay.enqueue({ prompt, modelId: body.modelId, effort: body.effort, engine, owner }));
   }
 
   if (method === 'GET' && route === '/jobs') {
@@ -216,7 +237,8 @@ async function api(req, res, url) {
   if (method === 'POST' && route === '/theme') {
     const body = await readBody(req);
     try {
-      return send(res, 200, await prism.generate(body.vibe));
+      const engine = body.engine ? uplink.validate(body.engine) : null;
+      return send(res, 200, await prism.generate(body.vibe, engine));
     } catch (err) {
       return send(res, 400, { error: err.message });
     }
@@ -247,6 +269,18 @@ async function api(req, res, url) {
     return send(res, 200, { ok: true });
   }
 
+  if (method === 'POST' && route === '/engine/test') {
+    const body = await readBody(req);
+    let engine;
+    try { engine = uplink.validate(body.engine); } catch (err) { return send(res, 400, { error: err.message }); }
+    try {
+      await uplink.chat({ system: 'Reply with the single word OK.', user: 'ping', engine, timeoutMs: 30000 });
+      return send(res, 200, { ok: true, label: uplink.label(engine) });
+    } catch (err) {
+      return send(res, 400, { error: err.message });
+    }
+  }
+
   if (method === 'POST' && route === '/sentinel/run') {
     if (Date.now() - lastManual < 10 * 60 * 1000) return send(res, 429, { error: 'The updater already ran in the last 10 minutes.' });
     lastManual = Date.now();
@@ -262,7 +296,7 @@ const server = http.createServer(async (req, res) => {
   try {
     const url = new URL(req.url, 'http://localhost');
     if (url.pathname.startsWith('/api/')) {
-      if (limited(req.socket.remoteAddress || 'x')) return send(res, 429, { error: 'Too many requests.' });
+      if (limited(clientIp(req))) return send(res, 429, { error: 'Too many requests.' });
       return await api(req, res, url);
     }
     if (req.method !== 'GET' && req.method !== 'HEAD') return send(res, 405, 'Method not allowed', { 'content-type': 'text/plain' });

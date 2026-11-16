@@ -1,6 +1,29 @@
 {
   "releases": [
     {
+      "version": "1.1.0",
+      "date": "2026-11-16",
+      "title": "Bring your own AI key",
+      "added": [
+        "AI engine tab: connect your own key (OpenAI-compatible, Anthropic or Gemini) so compiling is done by a real model",
+        "Multi-pass pipeline: analyze, draft, review, refine; Very High runs all four passes",
+        "Each result lists the assumptions the compiler made and the details you did not give",
+        "Visible warning when the AI engine fails and the built-in engine is used instead",
+        "The AI theme generator also uses your own engine",
+        "Keys stay in your browser (tab session by default); the server holds them in memory for one job only"
+      ],
+      "models": [],
+      "changed": [
+        "Settings drawer renamed from Appearance; the page author tag now follows meta.json",
+        "Version badge and package version: 1.1.0"
+      ],
+      "fixed": [
+        "Per-visitor rate limit now works behind a reverse proxy (all visitors on Render previously shared one limit)",
+        "Queue limits: 8 prompts in progress per visitor, 300 waiting in total",
+        "Outgoing AI requests are SSRF-guarded: https only, public addresses only, no redirects, size-capped"
+      ]
+    },
+    {
       "version": "1.0.0",
       "date": "2026-11-15",
       "title": "First public release",

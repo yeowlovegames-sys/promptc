@@ -48,6 +48,7 @@
         <div class="seg" id="effort" role="radiogroup" aria-labelledby="effort-label"></div>
         <p class="hint" id="effort-hint"></p>
       </div>
+      <button class="engine-pill" id="engine-pill" type="button" data-shine aria-label="Choose the AI engine"></button>
       <button class="btn primary" id="go" data-shine disabled>Compile prompt <span aria-hidden="true">→</span></button>
       <p class="hint">Ctrl/⌘ + Enter to compile. You can queue several prompts; finished ones appear instantly.</p>
     </section>
@@ -61,13 +62,14 @@
   <footer class="foot" id="foot"></footer>
 
   <!-- appearance drawer -->
-  <aside class="drawer" id="drawer" hidden aria-label="Appearance">
-    <div class="drawer-head"><h2>Appearance</h2><button class="btn small ghost" data-close="drawer" aria-label="Close">✕</button></div>
+  <aside class="drawer" id="drawer" hidden aria-label="Settings">
+    <div class="drawer-head"><h2>Settings</h2><button class="btn small ghost" data-close="drawer" aria-label="Close">✕</button></div>
     <div class="drawer-body">
       <div class="tabs" role="tablist" id="drawer-tabs">
         <button class="tab" role="tab" data-tab="themes" aria-selected="true">Themes</button>
         <button class="tab" role="tab" data-tab="css" aria-selected="false">CSS editor</button>
         <button class="tab" role="tab" data-tab="ai" aria-selected="false">AI theme</button>
+        <button class="tab" role="tab" data-tab="engine" aria-selected="false">AI engine</button>
       </div>
 
       <div data-panel="themes"><div class="themes" id="themes"></div></div>
@@ -96,6 +98,38 @@
         <div class="chips" id="vibes" style="margin:10px 0"></div>
         <button class="btn primary" id="vibe-go" data-shine>Generate theme</button>
         <p class="report" id="vibe-report"></p>
+      </div>
+
+      <div data-panel="engine" hidden>
+        <p class="hint">Compile with a real AI model using <b>your own API key</b>. Each prompt then goes through several passes: analyze, draft, review, refine. Without a key, the built-in rule-based engine is used.</p>
+        <div class="field">
+          <label class="label" for="eng-provider">Provider</label>
+          <select id="eng-provider">
+            <option value="openai">OpenAI-compatible (OpenAI, OpenRouter, DeepSeek, xAI, Groq…)</option>
+            <option value="anthropic">Anthropic (Claude)</option>
+            <option value="google">Google (Gemini)</option>
+          </select>
+        </div>
+        <div class="field" id="eng-base-wrap">
+          <label class="label" for="eng-base">Base URL</label>
+          <input type="url" id="eng-base" maxlength="200" autocomplete="off" spellcheck="false" placeholder="https://api.openai.com/v1">
+          <div class="chips" id="eng-presets"></div>
+        </div>
+        <div class="field">
+          <label class="label" for="eng-model">Model id</label>
+          <input type="text" id="eng-model" maxlength="100" autocomplete="off" spellcheck="false" placeholder="exact model id from your provider">
+        </div>
+        <div class="field">
+          <label class="label" for="eng-key">API key</label>
+          <input type="password" id="eng-key" maxlength="500" autocomplete="off" spellcheck="false" placeholder="paste your key">
+        </div>
+        <label class="check"><input type="checkbox" id="eng-remember"> Remember the key on this device (otherwise it is forgotten when you close the tab)</label>
+        <div class="row">
+          <button class="btn primary" id="eng-test" data-shine>Test &amp; enable</button>
+          <button class="btn small ghost" id="eng-forget">Forget key</button>
+        </div>
+        <p class="report" id="eng-report"></p>
+        <p class="hint">Your key is sent over https to this server only to make your own requests. It is held in memory for the length of one job, then discarded; it is never saved on the server or written to logs. It is stored in this browser only. Prefer a key with a low spending limit, and only use sites you trust.</p>
       </div>
     </div>
   </aside>

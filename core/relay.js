@@ -25,12 +25,15 @@ class Relay {
     this.active = 0;
   }
 
-  enqueue({ prompt, modelId, effort }) {
+  /** @param {{prompt:string, modelId:string, effort:string, engine?:object|null, owner?:string}} p */
+  enqueue({ prompt, modelId, effort, engine = null, owner = '' }) {
     const job = {
       id: crypto.randomBytes(6).toString('hex'),
       prompt,
       modelId,
       effort,
+      engine, // user's api key lives here, in memory only, and is wiped when the job ends
+      owner,
       status: 'queued',
       stage: 'Queued',
       progress: 0,
@@ -51,10 +54,18 @@ class Relay {
     const job = this.jobs.get(id);
     if (!job || job.status !== 'queued') return false;
     this.waiting = this.waiting.filter((j) => j !== job);
+    job.engine = null;
     job.status = 'error';
     job.error = 'Cancelled';
     job.finishedAt = Date.now();
     return true;
+  }
+
+  /** jobs that are queued or running for one owner (used for a per-ip cap) */
+  openCount(owner) {
+    let n = 0;
+    for (const j of this.jobs.values()) if (j.owner === owner && (j.status === 'queued' || j.status === 'running')) n++;
+    return n;
   }
 
   get(id) {
@@ -124,6 +135,7 @@ class Relay {
       job.status = 'error';
       job.error = err && err.message ? err.message : String(err);
     } finally {
+      job.engine = null; // never keep a user's key longer than the job
       job.finishedAt = Date.now();
       this.active--;
       setImmediate(() => this._pump());

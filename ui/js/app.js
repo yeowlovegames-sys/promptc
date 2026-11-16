@@ -140,6 +140,8 @@
     $('#foot').appendChild(document.createTextNode(' · ' + m.license + ' · '));
     $('#foot').appendChild(h('a', { href: m.repo, target: '_blank', rel: 'noopener noreferrer', text: 'source' }));
     document.title = 'promptc — ' + m.author;
+    var authorTag = document.querySelector('meta[name="author"]');
+    if (authorTag) authorTag.setAttribute('content', m.author);
   }
 
   function verifySeal() {
@@ -235,12 +237,133 @@
     if (!prompt || !model) return;
     Vault.set('model', model.id);
     ui.go.disabled = true;
-    api('/jobs', { method: 'POST', body: { prompt: prompt, modelId: model.id, effort: state.effort } }).then(function (j) {
+    var payload = { prompt: prompt, modelId: model.id, effort: state.effort };
+    if (engineReady()) payload.engine = engineBody();
+    api('/jobs', { method: 'POST', body: payload }).then(function (j) {
       state.runs.unshift({ id: j.id, prompt: prompt, modelId: model.id, modelLabel: model.label, effort: state.effort, status: j.status, stage: j.stage, position: j.position, progress: 0, createdAt: Date.now() });
       persist();
       renderRuns();
       schedulePoll();
     }).catch(function (e) { toast(e.message, 'error'); }).then(updateComposer);
+  }
+
+  /* ---------------------------------------------------- ai engine (bring your own key) */
+  var PROVIDER_NAMES = { openai: 'OpenAI-compatible', anthropic: 'Anthropic', google: 'Gemini' };
+  var MODEL_HINTS = { openai: 'model id, as listed by your provider', anthropic: 'a Claude model id from your Anthropic console', google: 'a Gemini model id from Google AI Studio' };
+  var PRESETS = [
+    ['OpenAI', 'https://api.openai.com/v1'],
+    ['OpenRouter', 'https://openrouter.ai/api/v1'],
+    ['DeepSeek', 'https://api.deepseek.com/v1'],
+    ['xAI', 'https://api.x.ai/v1'],
+    ['Groq', 'https://api.groq.com/openai/v1']
+  ];
+  var memKey = '';
+  var savedEngine = Vault.get('engine', null) || {};
+  var engine = {
+    on: !!savedEngine.on,
+    provider: PROVIDER_NAMES[savedEngine.provider] ? savedEngine.provider : 'openai',
+    baseUrl: String(savedEngine.baseUrl || ''),
+    model: String(savedEngine.model || ''),
+    remember: !!savedEngine.remember
+  };
+
+  /* the key lives in sessionStorage (gone when the tab closes) or, if the user opts in, localStorage */
+  function keyGet() {
+    try { return sessionStorage.getItem('promptc:ekey') || localStorage.getItem('promptc:ekey') || memKey; } catch (e) { return memKey; }
+  }
+  function keyClear() {
+    memKey = '';
+    try { sessionStorage.removeItem('promptc:ekey'); localStorage.removeItem('promptc:ekey'); } catch (e) { /* ignore */ }
+  }
+  function keySet(key, remember) {
+    keyClear();
+    memKey = key;
+    try { (remember ? localStorage : sessionStorage).setItem('promptc:ekey', key); } catch (e) { /* memory only */ }
+  }
+  function saveEngine() {
+    Vault.set('engine', { on: engine.on, provider: engine.provider, baseUrl: engine.baseUrl, model: engine.model, remember: engine.remember });
+  }
+  function engineReady() { return engine.on && !!engine.model && !!keyGet(); }
+  function engineBody() {
+    var b = { provider: engine.provider, model: engine.model, key: keyGet() };
+    if (engine.provider === 'openai' && engine.baseUrl) b.baseUrl = engine.baseUrl;
+    return b;
+  }
+
+  function renderPill() {
+    var pill = $('#engine-pill');
+    if (!pill) return;
+    var ready = engineReady();
+    pill.classList.toggle('on', ready || !!(state.meta && state.meta.upstream));
+    if (ready) pill.textContent = '✦ AI engine: ' + PROVIDER_NAMES[engine.provider] + ' · ' + engine.model;
+    else if (state.meta && state.meta.upstream) pill.textContent = '✦ AI engine: provided by this server';
+    else pill.textContent = '✦ Built-in engine · connect your own AI key for smarter results';
+  }
+
+  function fillEngine() {
+    $('#eng-provider').value = engine.provider;
+    $('#eng-base').value = engine.baseUrl;
+    $('#eng-model').value = engine.model;
+    $('#eng-remember').checked = engine.remember;
+    $('#eng-key').value = '';
+    $('#eng-key').placeholder = keyGet() ? 'saved — paste a new key to replace it' : 'paste your key';
+    $('#eng-model').placeholder = MODEL_HINTS[engine.provider];
+    $('#eng-base-wrap').hidden = engine.provider !== 'openai';
+    var rep = $('#eng-report');
+    rep.className = 'report';
+    rep.textContent = engineReady() ? 'Enabled — new prompts use your AI engine.' : '';
+  }
+
+  function bindEngine() {
+    PRESETS.forEach(function (p) {
+      $('#eng-presets').appendChild(h('button', { class: 'btn small', type: 'button', text: p[0], onclick: function () { $('#eng-base').value = p[1]; } }));
+    });
+    $('#eng-provider').addEventListener('change', function (e) {
+      engine.provider = e.target.value;
+      $('#eng-base-wrap').hidden = engine.provider !== 'openai';
+      $('#eng-model').placeholder = MODEL_HINTS[engine.provider];
+    });
+    $('#eng-remember').addEventListener('change', function (e) {
+      engine.remember = e.target.checked;
+      if (keyGet()) keySet(keyGet(), engine.remember);
+      saveEngine();
+    });
+    $('#eng-forget').addEventListener('click', function () {
+      keyClear();
+      engine.on = false;
+      saveEngine();
+      renderPill();
+      fillEngine();
+      $('#eng-report').textContent = 'Key removed from this browser. The built-in engine is active.';
+    });
+    $('#eng-test').addEventListener('click', function () {
+      var provider = $('#eng-provider').value;
+      var model = $('#eng-model').value.trim();
+      var baseUrl = $('#eng-base').value.trim();
+      var remember = $('#eng-remember').checked;
+      var key = $('#eng-key').value.trim() || keyGet();
+      var rep = $('#eng-report');
+      var btn = $('#eng-test');
+      if (!model || !key) { rep.className = 'report bad'; rep.textContent = 'Enter a model id and an API key.'; return; }
+      var body = { provider: provider, model: model, key: key };
+      if (provider === 'openai' && baseUrl) body.baseUrl = baseUrl;
+      btn.disabled = true;
+      rep.className = 'report';
+      rep.textContent = 'Testing…';
+      api('/engine/test', { method: 'POST', body: { engine: body } }).then(function (d) {
+        engine.on = true; engine.provider = provider; engine.model = model; engine.baseUrl = baseUrl; engine.remember = remember;
+        keySet(key, remember);
+        saveEngine();
+        renderPill();
+        fillEngine();
+        $('#eng-report').textContent = 'Connected — ' + d.label + '. New prompts will use your AI engine.';
+        toast('AI engine enabled', 'ok');
+      }).catch(function (e) {
+        rep.className = 'report bad';
+        rep.textContent = e.message;
+      }).then(function () { btn.disabled = false; });
+    });
+    $('#engine-pill').addEventListener('click', function () { openDrawer('engine'); });
   }
 
   /* --------------------------------------------------------- queue polling */
@@ -373,7 +496,7 @@
     var info = r.info || {};
     var from = info.words ? info.words.from : words(r.prompt);
     var to = info.words ? info.words.to : words(r.result);
-    var statText = from + ' → ' + to + ' words (×' + (from ? (to / from).toFixed(1) : '–') + ')' + (info.typeLabel ? ' · ' + info.typeLabel : '') + (r.engine === 'upstream' ? ' · upstream model' : '');
+    var statText = from + ' → ' + to + ' words (×' + (from ? (to / from).toFixed(1) : '–') + ')' + (info.typeLabel ? ' · ' + info.typeLabel : '') + (r.engine === 'upstream' ? ' · ' + (info.engineLabel || 'AI engine') + (info.passes ? ' · ' + info.passes + (info.passes === 1 ? ' pass' : ' passes') : '') : ' · built-in engine');
     wrap.appendChild(h('div', { class: 'run-foot' },
       h('button', {
         class: 'btn primary small', 'data-shine': true, text: 'Copy compiled prompt',
@@ -381,6 +504,15 @@
       }),
       h('span', { class: 'stat', text: statText })
     ));
+    (info.warnings || []).forEach(function (w) { wrap.appendChild(h('p', { class: 'report warn', text: w })); });
+    var assumed = info.assumptions || [];
+    var missing = info.missing || [];
+    if (assumed.length || missing.length) {
+      var det = h('details', { class: 'assume' }, h('summary', { text: 'What the compiler assumed (' + (assumed.length + missing.length) + ')' }));
+      if (assumed.length) { det.appendChild(h('h5', { text: 'Assumptions' })); det.appendChild(h('ul', null, assumed.map(function (a) { return h('li', { text: a }); }))); }
+      if (missing.length) { det.appendChild(h('h5', { text: 'Details you did not give' })); det.appendChild(h('ul', null, missing.map(function (a) { return h('li', { text: a }); }))); }
+      wrap.appendChild(det);
+    }
     return wrap;
   }
 
@@ -410,6 +542,7 @@
   function switchTab(name) {
     $$('#drawer-tabs .tab').forEach(function (t) { t.setAttribute('aria-selected', String(t.getAttribute('data-tab') === name)); });
     $$('[data-panel]').forEach(function (p) { p.hidden = p.getAttribute('data-panel') !== name; });
+    if (name === 'engine') fillEngine();
   }
 
   function setTheme(id) {
@@ -508,7 +641,9 @@
     btn.disabled = true;
     rep.className = 'report';
     rep.textContent = 'Designing…';
-    api('/theme', { method: 'POST', body: { vibe: vibe } }).then(function (t) {
+    var themeBody = { vibe: vibe };
+    if (engineReady()) themeBody.engine = engineBody();
+    api('/theme', { method: 'POST', body: themeBody }).then(function (t) {
       applyCustomTheme(t);
       setTheme('custom');
       rep.textContent = t.name + ' — ' + t.explain;
@@ -629,6 +764,7 @@
     });
 
     VIBES.forEach(function (v) { $('#vibes').appendChild(h('button', { class: 'btn small', type: 'button', text: v, onclick: function () { $('#vibe').value = v; generateTheme(); } })); });
+    bindEngine();
     $('#vibe-go').addEventListener('click', generateTheme);
     $('#vibe').addEventListener('keydown', function (e) { if (e.key === 'Enter') generateTheme(); });
   }
@@ -644,7 +780,8 @@
     renderRuns();
     if (state.runs.some(isOpen)) schedulePoll();
     loadModels().then(updateComposer);
-    loadMeta();
+    renderPill();
+    loadMeta().then(renderPill);
     loadSignals();
     setInterval(watchSeal, 5000);
     setInterval(loadSignals, 10 * 60 * 1000);
